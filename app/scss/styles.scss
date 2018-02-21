@@ -1,6 +1,11 @@
 @import 'longform-styles';
 @import 'philly-styles/values';
 
+.toggleMap {
+  position: relative;
+}
+
+
 .gridbackgroundImageCredit {
     /* position: absolute; */
     bottom: 10px;
@@ -42,17 +47,12 @@ svg {
   position: absolute;
   z-index: 1;
   opacity: 0.5;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cccc3b+2,000000+57,000000+83,000000+98 */
-  background: rgb(204,204,59);
-  /* Old browsers */
-  background: -moz-linear-gradient(-45deg, rgba(204,204,59,1) 2%, rgba(0,0,0,1) 57%, rgba(0,0,0,1) 83%, rgba(0,0,0,1) 98%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, rgba(204,204,59,1) 2%,rgba(0,0,0,1) 57%,rgba(0,0,0,1) 83%,rgba(0,0,0,1) 98%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, rgba(204,204,59,1) 2%,rgba(0,0,0,1) 57%,rgba(0,0,0,1) 83%,rgba(0,0,0,1) 98%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr= '#cccc3b', endColorstr='#000000',GradientType=1 );
-  /* IE6-9 fallback on horizontal gradient */
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cccc3b+0,000000+91&0.69+0,0.5+100 */
+  background: -moz-linear-gradient(-45deg, rgba(204,204,59,0.69) 0%, rgba(0,0,0,0.52) 91%, rgba(0,0,0,0.5) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, rgba(204,204,59,0.69) 0%,rgba(0,0,0,0.52) 91%,rgba(0,0,0,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, rgba(204,204,59,0.69) 0%,rgba(0,0,0,0.52) 91%,rgba(0,0,0,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0cccc3b', endColorstr='#80000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 
   @include tablet {
     opacity: 0;
@@ -287,6 +287,8 @@ svg {
 
   }
 }
+
+
 
 #growth-leg {
   position: absolute;
