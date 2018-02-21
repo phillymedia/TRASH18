@@ -1,7 +1,19 @@
 @import 'longform-styles';
 @import 'philly-styles/values';
 
-
+.gridbackgroundImageCredit {
+    /* position: absolute; */
+    bottom: 10px;
+    margin-right: 10px;
+    font-style: italic;
+    float: right;
+    right: 10px;
+    padding-top: 5px;
+    font-size: 11px;
+    color: #666;
+    z-index: 1;
+    font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", "Gotham Narrow", "Arial", sans-serif;
+}
 
 svg {
     max-height: none !important;
@@ -29,7 +41,7 @@ svg {
   height: 100%;
   position: absolute;
   z-index: 1;
-  opacity: 0.7;
+  opacity: 0.5;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cccc3b+2,000000+57,000000+83,000000+98 */
   background: rgb(204,204,59);
   /* Old browsers */
@@ -60,13 +72,24 @@ svg {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
     width: 60%;
+
+    @include tablet {
+      width: 100%;
+      padding: 10px 0 0;
+      margin: 10px auto 0;
+      border: none;
+    }
 }
 
 
 #complaints-container {
   width: 100%;
-  height: 400px;
+  min-height: 300px;
   position: relative;
+
+  @include tablet {
+    display: none;
+  }
 
 #complaints {
   top: 50%;
@@ -119,6 +142,12 @@ svg {
     @include desktop {
       font-size: 60px;
     }
+    @include tablet {
+      font-size: 40px;
+      font-family:$philly-sans;
+      font-weight: 800;
+      padding-top: 20px;
+    }
   }
 
   .sHead {
@@ -132,6 +161,10 @@ svg {
     @include desktop {
       font-size: 18px;
       width: 80%;
+    }
+    @include tablet {
+      font-family: $philly-serif;
+      font-weight: 400;
     }
   }
 
@@ -149,6 +182,12 @@ svg {
       font-weight: 100;
       letter-spacing: 1px;
       margin-top: 15px;
+      @include tablet {
+        text-shadow: none;
+        color:#222;
+        margin-top: 0;
+        font-weight: 500;
+      }
     }
   }
 
@@ -349,8 +388,19 @@ svg {
   font-family: $philly-sans;
   font-weight: 800;
   color: rgb(65, 92, 41);
+  @include mobile {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+    justify-content: space-around;
+  }
 
-  .icon {}
+
+
+  .icon {
+    @include mobile {
+      display: none;
+    }
+  }
 
   .count {
     line-height: 0.8;
@@ -361,6 +411,9 @@ svg {
     .name {
       width: 120px;
       line-height: 0.8;
+      @include mobile {
+        width: auto;
+      }
     }
   }
 
@@ -368,19 +421,35 @@ svg {
     .name {
       width: 50px;
       line-height: 0.8;
+      @include mobile {
+        width: auto;
+      }
     }
   }
 }
 
-.float-right.med {
-  max-width: 500px;
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
 }
 
-.float-right {
-  float: right;
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  margin-right: -30%;
-  padding: 20px 0 10px 20px;
+  height: 100%;
+}
+
+.yt-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
 }
 
 .yt-name {
@@ -396,16 +465,9 @@ svg {
   font-size: 28px;
   color: #333;
   line-height: 0.9;
-  padding-top: 10px;
-  padding-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   font-family: Sentinel SSm A,Sentinel SSm B,Sentinel,Times New Roman,serif;
-}
-
-.yt-container {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%;
 }
 
 .yt-video {
@@ -414,6 +476,62 @@ svg {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.yt-outer .containerPhotoCaption {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+
+.yt-outer .containerPhotoCaption strong {
+  color: #000;
+}
+
+.float-right {
+  float: right;
+  width: 100%;
+  margin-right: -30%;
+  padding: 20px 0 10px 20px;
+  @include desktop {
+    margin-right: 0;
+    max-width: 50% !important;
+  }
+  @include tablet {
+    max-width: 100% !important;
+    padding: 0;
+    margin: 10px;
+  }
+}
+
+.float-right.large {
+  max-width: 700px;
+}
+
+.float-right.med {
+  max-width: 500px;
+}
+
+.float-right.small {
+  max-width: 400px;
+}
+
+
+.float-right.smaller {
+  max-width: 300px;
+  margin-bottom: 20px !important;
+  @include desktop {
+    max-width: 280px !important;
+  }
+  @include mobile {
+    max-width: 100% !important;
+    margin: 0 auto;
+  }
+  img {
+    @include mobile {
+      max-width: 75% !important;
+      margin: 0 10%;
+    }
+  }
 }
 
 .credits {
