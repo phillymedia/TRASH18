@@ -9,16 +9,24 @@ require('./jquery-timing.min.js');
 
 
 
-$(window).scroll(function() {
-  var d = $('.fadeLead'),
-      offsetT = d.offset().top + d.outerHeight(),
-      scrollT = $(document).scrollTop(),
-      y1 = 1, y2 = 0,
-      x1 = 0, x2 = offsetT,
-      m = (y2-y1)/(x2-x1);
+if ($(window).width() < 800) {
 
-  d.css('opacity', Math.max(0,y1 + m * scrollT));
-});
+}
+else {
+  $(window).scroll(function() {
+    var d = $('.fadeLead'),
+        offsetT = d.offset().top + d.outerHeight(),
+        scrollT = $(document).scrollTop(),
+        y1 = 1, y2 = 0,
+        x1 = 0, x2 = offsetT,
+        m = (y2-y1)/(x2-x1);
+
+    d.css('opacity', Math.max(0,y1 + m * scrollT));
+  });
+
+}
+
+
 
 
 
@@ -106,26 +114,35 @@ var complaints_2010 = 14253,
   complaints_2017 = 50204;
 
 
-var trigger0 = $('#trigger_0').offset().top - $(window).outerHeight();
 
-$(window).scroll(function(event) {
-  // #target not yet in view
-  if (trigger0 + 300 > $(window).scrollTop()) {
-    return;
-  }
-  $(this).off(event);
-});
+
+
 
 var trigger1 = $('#trigger_1').offset().top - $(window).outerHeight();
 $(window).scroll(function(event) {
-  // #target not yet in view
-  if (trigger1 + 600 > $(window).scrollTop()) {
-    return;
+
+
+  if ($(window).width() < 800) {
+    // #target not yet in view
+    if (trigger1 + 50 > $(window).scrollTop()) {
+      return;
+    }
+  $("#l_2017").fadeIn();
+    $(this).off(event);
   }
-$("#l_2017").fadeIn();
+  else {
+    // #target not yet in view
+    if (trigger1 + 600 > $(window).scrollTop()) {
+      return;
+    }
+  $("#l_2017").fadeIn();
+    $(this).off(event);
+
+  }
 
 
-  $(this).off(event);
+
+
 });
 
 
