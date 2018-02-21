@@ -37,10 +37,6 @@ var images311 = []
 
 var complaints_text = [
   {
-    "complaint": "&ldquo;“Mounds of trash ... we really need help. We can't even walk up our block&rdquo;",
-    "location": "311 complaint from Southwest Philadelphia"
-  },
-  {
     "complaint": "&ldquo;Stray cats and raccoons are tearing open trash bags&rdquo;",
     "location": "311 complaint from North Philadelphia"
   },
@@ -64,6 +60,10 @@ var complaints_text = [
     "complaint": "&ldquo;Old rotting piano, have seen mice crawling in and out&rdquo;",
     "location": "311 complaint from Wissinoming"
   },
+  {
+    "complaint": "&ldquo;“Mounds of trash ... we really need help. We can't even walk up our block&rdquo;",
+    "location": "311 complaint from Southwest Philadelphia"
+  }
 ]
 
 var ii = 0;
