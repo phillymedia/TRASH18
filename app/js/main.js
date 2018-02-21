@@ -160,3 +160,14 @@ $(window).scroll(function(event) {
     var random = Math.floor(Math.random() * (max - min + 1)) + min;
     $(this).css("transform", "rotate(" + (random) + "deg)")
   })
+
+
+  $('.radio_button').click(function() {
+     if($('input[value="litter"]').is(':checked')) {
+        $("#litter-map").show();
+        $("#wait-map").hide();
+      } else {
+        $("#wait-map").show();
+        $("#litter-map").hide();
+      }
+  });
