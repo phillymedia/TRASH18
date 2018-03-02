@@ -20,6 +20,9 @@
     background-position: center;
     @include tablet {
         background-size: cover;
+        background-position: bottom;
+        background-attachment:scroll;
+
     }
 }
 
@@ -233,9 +236,11 @@
 }
 
 .imagebreak {
-    margin: 40px 0 50px;
+    margin-top:40px;
+    margin-bottom: 50px;
     @include mobile {
-        margin: 18px 0 30px;
+      margin-top:18px;
+      margin-bottom: 30px;
     }
 }
 .pull-right {

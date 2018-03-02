@@ -61,7 +61,7 @@ var complaints_text = [
     "location": "311 complaint from Wissinoming"
   },
   {
-    "complaint": "&ldquo;“Mounds of trash ... we really need help. We can't even walk up our block&rdquo;",
+    "complaint": "&ldquo;Mounds of trash ... we really need help. We can't even walk up our block&rdquo;",
     "location": "311 complaint from Southwest Philadelphia"
   }
 ]
@@ -84,7 +84,7 @@ window.setInterval(function() {
 
 
 for (i = 0; i < 41; i++) {
-  var image = "http://media.philly.com/storage/inquirer/special%20project%20media/trash25/trash25_" + (i + 1) + ".jpg";
+  var image = "http://media.philly.com/storage/inquirer/special%20project%20media/trash25/trash25_e_" + (i + 1) + ".jpg";
   images311.push(image)
 }
 
@@ -118,32 +118,7 @@ var complaints_2010 = 14253,
 
 
 
-var trigger1 = $('#trigger_1').offset().top - $(window).outerHeight();
-$(window).scroll(function(event) {
 
-
-  if ($(window).width() < 800) {
-    // #target not yet in view
-    if (trigger1 + 50 > $(window).scrollTop()) {
-      return;
-    }
-  $("#l_2017").fadeIn();
-    $(this).off(event);
-  }
-  else {
-    // #target not yet in view
-    if (trigger1 + 600 > $(window).scrollTop()) {
-      return;
-    }
-  $("#l_2017").fadeIn();
-    $(this).off(event);
-
-  }
-
-
-
-
-});
 
 
   $(".bag_graph .icon").each(function() {
@@ -171,3 +146,8 @@ $(window).scroll(function(event) {
         $("#litter-map").hide();
       }
   });
+
+
+$(".clickWrap").click(function(){
+  $(this).removeClass('clickWrap')
+});
